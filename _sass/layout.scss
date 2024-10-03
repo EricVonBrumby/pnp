@@ -1,0 +1,35 @@
+@use "variables";
+
+html {
+    background: variables.$backgroundColor;
+    color: variables.$bodyColor;
+    font-family: variables.$bodyFont, sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+}
+
+.artdeco-box {
+    --lw: 2px; /* thickness of lines */
+    --o1: 15px; /* offest of lines*/
+    --o2: 10px; /* offset of rectangle */
+
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    box-sizing: border-box;
+    display: inline-block;
+    border: var(--o1) solid transparent;
+    outline: var(--lw) solid variables.$bodyColor;
+    outline-offset: calc(-1 * var(--o2));
+    background: conic-gradient(
+                    from 90deg at var(--lw) var(--lw),
+                    #0000 25%,
+                    variables.$bodyColor 0) 0 0/calc(100% - var(--lw)) calc(100% - var(--lw)) padding-box border-box;
+}
+
