@@ -6,6 +6,11 @@
 }
 
 @font-face {
+    font-family: 'Heritage';
+    src: url("../fonts/ja-her-reg.ttf");
+}
+
+@font-face {
     font-family: 'Semplicita Medium';
     src: url("../fonts/SemplicitaMedium.otf");
 }
@@ -20,76 +25,61 @@
     src: url("../fonts/SemplicitaLight.otf");
 }
 
-@mixin art-deco-underline() {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
-
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -10px;
-        height: 10px;
-        background: linear-gradient(to bottom,
-                variables.$bodyColor 0%,
-                variables.$bodyColor 20%,
-                transparent 20%,
-                transparent 80%,
-                variables.$bodyColor 80%,
-                variables.$bodyColor 100%
-        );
-        z-index: -1;
-    }
-}
-
-
 body {
     font-family: 'Semplicita Light', sans-serif;
     font-size: 16px;
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 10em;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 3.25em;
+    font-size: 3.75em;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: bold;
 }
 
 h4 {
-    font-size: 1.75em;
+    font-size: 2.25em;
     font-weight: bold;
 }
 
 h5 {
-    font-size: 1.5em;
+    font-size: 1.75em;
     font-weight: bold;
 }
 
 h6 {
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Dyer', sans-serif;
+    font-weight: normal;
     text-align: center;
     width: fit-content;
     padding-inline: 25px;
     margin-inline: auto;
     margin-bottom: 0.5em;
 
-    @include art-deco-underline()
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+h1 {
+    font-family: 'Heritage', serif;
+    margin-bottom: 0.125em;
+}
+
+h1, h2, h3 {
+    text-decoration-style: double;
 }
 
 ol {
@@ -147,4 +137,13 @@ hr {
         border-inline: none;
         border-radius: 8px;
     }
+}
+
+p, blockquote, ol, ul {
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+a, a:visited, a:hover {
+    color: variables.$accentColor;
 }

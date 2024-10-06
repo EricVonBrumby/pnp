@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="de-DE">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   </head>
   <body>
-      <div class="artdeco-box">
-          {{ content }}
+      <div class="wrapper">
+          <section class="artdeco-box--overhang">
+              {{ content }}
+              <div class="artdeco-box--setin"></div>
+          </section>
       </div>
   </body>
 </html>

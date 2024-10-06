@@ -13,23 +13,55 @@ body {
     padding: 10px;
 }
 
-.artdeco-box {
-    --lw: 2px; /* thickness of lines */
-    --o1: 15px; /* offest of lines*/
-    --o2: 10px; /* offset of rectangle */
-
-    width: 100%;
+.wrapper {
     height: 100%;
-    padding: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-inline: auto;
+}
 
-    box-sizing: border-box;
-    display: inline-block;
-    border: var(--o1) solid transparent;
-    outline: var(--lw) solid variables.$bodyColor;
-    outline-offset: calc(-1 * var(--o2));
-    background: conic-gradient(
-                    from 90deg at var(--lw) var(--lw),
-                    #0000 25%,
-                    variables.$bodyColor 0) 0 0/calc(100% - var(--lw)) calc(100% - var(--lw)) padding-box border-box;
+.artdeco-box {
+    &--overhang {
+        --lw: 2px; /* thickness of lines */
+        --o1: 15px; /* offest of lines*/
+        --o2: 10px; /* offset of rectangle */
+
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+
+        box-sizing: border-box;
+        display: inline-block;
+        border: var(--o1) solid transparent;
+        outline: var(--lw) solid variables.$bodyColor;
+        outline-offset: calc(-1 * var(--o2));
+        background: conic-gradient(
+                        from 90deg at var(--lw) var(--lw),
+                        #0000 25%,
+                        variables.$bodyColor 0) 0 0/calc(100% - var(--lw)) calc(100% - var(--lw)) padding-box border-box;
+    }
+
+    &--setin {;
+        position: relative;
+        padding: 15px;
+        margin: 15px;
+
+        &:before, &:after {
+            content: '';
+            border: 2px solid variables.$bodyColor;
+            position: absolute;
+        }
+
+        &:before {
+            inset-block: -4px;
+            inset-inline: 4px;
+        }
+
+        &:after {
+            /* horizontal*/
+            inset-block: 4px;
+            inset-inline: -4px;
+        }
+    }
 }
 
