@@ -1,0 +1,111 @@
+@use "variables";
+
+.sun-and-moon {
+    > :is(.moon, .sun, .sun-beams) {
+        transform-origin: center;
+    }
+
+    > :is(.moon, .sun) {
+        fill: variables.$bodyColor;
+    }
+
+    > .sun-beams {
+        stroke: variables.$bodyColor;
+        stroke-width: 2px;
+    }
+}
+
+.theme-toggle {
+    background: variables.$backgroundColor;
+    border: 2px solid variables.$bodyColor;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(45deg);
+    cursor: pointer;
+
+    & .sun-and-moon {
+        transform: rotate(-45deg);
+        position: relative;
+        left: 1px;
+    }
+
+    &:is(:hover, :focus-visible) {
+        > .sun-and-moon {
+            > :is(.moon, .sun) {
+                fill: variables.$bodyColor--hover;
+                transition: fill .25s variables.$ease-out;
+            }
+
+            > .sun-beams {
+                stroke: variables.$bodyColor--hover;
+                transition: stroke .25s variables.$ease-out;
+            }
+        }
+    }
+}
+
+[data-theme="dark"] {
+    .sun-and-moon {
+        > .sun {
+            transform: scale(1.75);
+        }
+
+        > .sun-beams {
+            opacity: 0;
+        }
+
+        > .moon > circle {
+            transform: translateX(-7px);
+        }
+
+        @supports (cx: 1) {
+            > .moon > circle {
+                cx: 17;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .sun-and-moon {
+        > .sun {
+            transition: transform .5s variables.$ease-elastic;
+        }
+
+        > .sun-beams {
+            transition: transform .5s variables.$ease-elastic, opacity .5s variables.$ease;
+        }
+
+        .moon > circle {
+            transition: transform .25s variables.$ease-out;
+
+            @supports (cx: 1) {
+                transition: cx .25s variables.$ease-out;
+            }
+        }
+    }
+
+    [data-theme="dark"] {
+        .sun-and-moon {
+            > .sun {
+                transition-timing-function: variables.$ease;
+                transition-duration: .25s;
+                transform: scale(1.75);
+            }
+
+            > .sun-beams {
+                transition-duration: .15s;
+                transform: rotateZ(-25deg);
+            }
+
+            > .moon > circle {
+                transition-duration: .5s;
+                transition-delay: .25s;
+            }
+        }
+    }
+}
