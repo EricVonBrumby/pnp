@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="de-DE">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    <script type="module" src="{{ "/assets/JavaScript/main.js" | relative_url }}"></script>
-  </head>
-  <body>
-      <div class="wrapper">
-          <section class="artdeco-box--overhang">
-              {% include darkmode-toggle.html %}
-              <h1>{{ page.title }}</h1>
-              <hr>
-              {{ content }}
-              <div class="artdeco-box--setin"></div>
-          </section>
-      </div>
-  </body>
+    {% include head.html %}
+    <body>
+        <div class="wrapper">
+            <div class="artdeco-box--overhang">
+                {% include darkmode-toggle.html %}
+                <header>
+                    <h1>{{ page.title }}</h1>
+                </header>
+                <hr>
+                <main>
+                    {{ content }}
+                </main>
+                <hr>
+                <footer>
+
+                </footer>
+            </div>
+        </div>
+    </body>
 </html>

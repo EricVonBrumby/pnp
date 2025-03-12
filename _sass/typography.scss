@@ -91,20 +91,13 @@ ol {
 }
 
 hr {
-    height: 10px;
+    height: 14px;
     margin-block: 25px;
-    margin-inline: -25px;
+    margin-inline: -40px;
     position: relative;
     color: variables.$bodyColor;
     border: none;
-    background: linear-gradient(to bottom,
-            variables.$bodyColor 0%,
-            variables.$bodyColor 20%,
-            transparent 20%,
-            transparent 80%,
-            variables.$bodyColor 80%,
-            variables.$bodyColor 100%
-    );
+    border-block: 2px solid variables.$bodyColor;;
     overflow: visible;
 
     &:before, &:after {
@@ -131,8 +124,8 @@ hr {
 
     &:after {
         z-index: 10;
-        top: -6px;
-        height: 22px;
+        top: -8px;
+        height: 26px;
         width: 200px;
         border-inline: none;
         border-radius: 8px;
