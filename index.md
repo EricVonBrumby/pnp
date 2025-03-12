@@ -30,4 +30,10 @@ Start developing your Jekyll website.
 
 ---
 
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+
 [title](https://www.example.com)

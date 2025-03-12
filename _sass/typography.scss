@@ -27,7 +27,7 @@
 
 body {
     font-family: 'Semplicita Light', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 h1 {
@@ -139,11 +139,20 @@ hr {
     }
 }
 
-p, blockquote, ol, ul {
+p, blockquote, ol, ul, table {
     max-width: 600px;
     margin-inline: auto;
 }
 
 a, a:visited, a:hover {
     color: variables.$accentColor;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid variables.$bodyColor;
+    padding: 2px 8px;
 }

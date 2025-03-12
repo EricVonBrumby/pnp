@@ -4,12 +4,18 @@ html {
     background: variables.$backgroundColor;
     color: variables.$bodyColor;
     font-family: variables.$bodyFont, sans-serif;
+
+    transition: background-color variables.$ease 0.3s;
+
+    &[data-theme="light"] {
+        background: variables.$backgroundColor--light;
+    }
 }
 
 
 body {
     min-height: 100vh;
-    padding: 10px;
+    padding: 50px 10px;
 }
 
 .wrapper {
