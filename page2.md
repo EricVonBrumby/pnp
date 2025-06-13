@@ -3,6 +3,12 @@ layout: default
 title: "Pen and Paper"
 ---
 
+# Pen and Paper
+## Pen and Paper
+### Pen and Paper
+#### Pen and Paper
+##### Pen and Paper
+###### Pen and Paper
 
 Start developing your Jekyll website.
 
@@ -28,6 +34,5 @@ Start developing your Jekyll website.
 | --------- | ----------- |
 | Header    | Title       |
 | Paragraph | Text        |
-
 
 [title](/page2)
